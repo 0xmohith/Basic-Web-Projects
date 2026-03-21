@@ -1,0 +1,154 @@
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    section{
+        scroll-snap-align: start;
+        height: 100vh;
+
+    }
+    body{
+        background-color: black;
+    }
+    .text{
+        font-size: 130px;
+        color: rgb(5, 227, 247);
+        font-weight: bolder;
+        letter-spacing: 15px;
+        text-transform: uppercase;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-box-reflect:below -50px linear-gradient(transparent, rgba(255,255,255,0.5));
+    }
+    .refl_mercedes{
+        background-color: black;
+    }
+    .mercedes{
+        background-image: url('./mercedes-car.jpg');
+        background-size: 60vw;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: black;
+        height: 100vh;
+    }
+    .timeline_sec{
+        background-color: black;
+        color: black;
+    }
+    .timeline{
+        position: relative;
+        max-width: 1200px;
+        margin: 100px auto;
+        z-index: 0;
+    }
+    .container{
+        padding: 10px 50px;
+        position: relative;
+        width: 50%;
+        animation: movedown 1s linear forwards;
+        opacity: 0;
+    }
+    @keyframes movedown{
+        0%{
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+    .container:nth-child(1){
+        animation-delay: 0s;
+    }
+    .container:nth-child(2){
+        animation-delay: 2s;
+    }
+    .container:nth-child(3){
+        animation-delay: 4s;
+    }
+    .container:nth-child(4){
+        animation-delay: 6s;
+    }
+    .container:nth-child(5){
+        animation-delay: 8s;
+    }
+    .container:nth-child(6){
+        animation-delay: 10s;
+    }
+    .text_box{
+        padding: 20px 30px;
+        background: silver;
+        position: relative;
+        border-radius: 6px;
+        font-size: 15px;
+    }
+    .left-container{
+        left: 0.3%;
+    }
+    .right-container{
+        left: 49.3%;
+    }
+    .container img{
+        position: absolute;
+        width: 50px;
+        border-radius: 50%;
+        right: -20px;
+        top: 32px;
+        z-index: 10;
+    }
+    .right-container img{
+        left: -20px;
+    }
+    .timeline::after{
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 100%;
+        background-color: black;
+        top: 0;
+        left: 50%;
+        margin-left: -5px;
+        animation: linemove 12s linear forwards;
+        z-index: -1;
+    }
+    @keyframes linemove{
+        0%{
+            height: 0;
+        }
+        100%{
+            height: 100%;
+        }
+    }
+    .text_box h2{
+        font-weight: 600;
+    }
+    .text_box small{
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    .left-container-arrow{
+        position: absolute;
+        top: 28px;
+        right: -15px;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid silver;
+        z-index: 1;
+    }
+    .right-container-arrow{
+        position: absolute;
+        top: 28px;
+        left: -15px;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-right: 15px solid silver;
+        z-index: 1;
+    }
