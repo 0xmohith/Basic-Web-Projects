@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   
+    .images{
+        justify-content: center;
+        display: flex;
+        flex-basis: 50%;
+        flex-direction: row;
+        
+    }
+    img{
+        width: 100px;
+        height: auto;
+        margin: 100px;
+    }
+    .container{
+        text-align: center;
+        margin-top: 100px;
+        color: blueviolet;
+        font-family: 'Brush Script MT', cursive;
+        font-size: 42px;
+    }
+</style>
+<body>
+
+    <div class="container">  
+        <h1>Rock, Paper, scissor...!</h1>
+        <button style="background-color: purple; color: white;" onclick="game()">Start Game</button>
+    </div>        
+    <div class="images">
+        <img src="rock.png" alt="Rock" id="p1">
+        <img src="paper.png" alt="paper" id="p2">
+    </div>
+     <script>
+        function game(){
+            var choice = ['rock.png', 'paper.png', 'scissor.png' ]
+
+            var playerOneIndex = Math.floor(Math.random() * choice.length)
+            var playerTwoIndex = Math.floor(Math.random() * choice.length)
+            var playerOne = choice[playerOneIndex]
+            var playerTwo = choice[playerTwoIndex]
+
+            var playerOneimage = document.getElementById("p1")//getting img1 element in variable
+            var playerTwoimage = document.getElementById("p2")//getting img2 element in variable
+
+            playerOneimage.src = playerOne //assigning the source of element img1 to player one
+            playerTwoimage.src = playerTwo//assigning the source of element img2 to player two
+
+            if(playerOne === playerTwo){
+                document.querySelector('h1').innerHTML = 'It is a tie'
+            }
+            else if(
+                playerOne === 'rock.png' && playerTwo === 'scissor.png' ||
+                playerOne === 'paper.png' && playerTwo === 'rock.png' ||
+                playerOne === 'scissor.png' && playerTwo === 'paper.png'
+            ){
+                document.querySelector('h1').innerHTML = "Player One wins"
+            }
+            else{
+                document.querySelector('h1').innerHTML = "Player Two wins"
+            }
+        }
+     </script>       
+        
+    
+</body>
+</html>

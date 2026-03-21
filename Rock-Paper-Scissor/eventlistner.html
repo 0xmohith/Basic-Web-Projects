@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>XYZ PAGE</h1>
+        <h2>Click to proceed</h2>
+
+        <button class="b1">Button1</button> 
+        <button class="b2">Button2</button>
+
+        <h2>LOGIN</h2>
+        <input type="text">
+        <h2>Password</h2>
+        <input type="text">
+    </center>
+</body>
+<script>
+    document.querySelector(".b1").addEventListener("click", clicker1) //getelements byid doesnot work with eventListner
+    function clicker1(){
+        alert("You clicked button 1...!")
+    }
+    document.querySelector(".b2").addEventListener("click", clicker2)//use different classes and functions for different outputs.
+    function clicker2(){ 
+        alert("You clicked button 2...!")//if you need same output for both clicks, you can use only one function.
+    }
+    //check for 'string characters' in eventListener on google for various things
+
+    document.addEventListener('keydown', loggedkey)
+    function loggedkey(thekeypressed){
+       var keypressed = thekeypressed.key //.key is an internal method in js
+       console.log(keypressed)
+    }
+</script>
+</html>
