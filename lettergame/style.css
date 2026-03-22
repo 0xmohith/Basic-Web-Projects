@@ -1,0 +1,25 @@
+#ImageContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#pointsCounter {
+    text-align: center;
+    margin-top: 20px;
+    color: black;
+    font-size: 24px;
+}
+
+#heading {
+    text-align: center;
+    color: black;
+    font-size: 42px;
+    font-family: 'Comic Sans MS',cursive, sans-serif;
+    margin-top: 20px;
+}
+
+body{
+    background-color: antiquewhite;
+}
